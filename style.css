@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(0, #120c56, #000000);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#stars, #stars2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.star, .star2 {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+}
+
+.star {
+    width: 2px;
+    height: 2px;
+    animation: anim-stars 10s linear infinite;
+}
+
+.star2 {
+    width: 1px;
+    height: 1px;
+    animation: anim-stars 15s linear infinite;
+}
+
+@keyframes anim-stars {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-1000px);
+  }
+}
+
+#comet-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#comet {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 30px;
+    height: 30px;
+    background: white; /* Cor do cometa */
+    border-radius: 50%;
+    box-shadow: 0 0 30px white, 0 0 60px white, 0 0 90px white;
+    animation: moveComet 5s linear infinite;
+}
+
+.tail {
+    position: absolute;
+    width: 200px;
+    height: 28px; /* Altura ajustada para suavizar a transição */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 0, 0.8), rgba(255, 160, 0, 1)); /* Invertido para ter a parte fina atrás */
+    top: 5%;
+    left: 15px; /* Ajuste para começar atrás do cometa */
+    transform-origin: right center;
+    border-radius: 0 50% 50% 0; /* Forma pontuda e arredondada invertida */
+    animation: fadeTail 5s linear infinite;
+    z-index: -1; /* Certifica-se de que a cauda esteja atrás do cometa */
+}
+
+.tail:nth-child(2) {
+    top: 5%;
+    left: 15px;
+    transform-origin: right center;
+    border-radius: 0 50% 50% 0; /* Forma pontuda e arredondada invertida */
+    animation: fadeTail 5s linear infinite 0.2s;
+    z-index: -1;
+}
+
+.tail:nth-child(3) {
+    top: 5%;
+    left: 15px;
+    transform-origin: right center;
+    border-radius: 0 50% 50% 0; /* Forma pontuda e arredondada invertida */
+    animation: fadeTail 5s linear infinite 0.4s;
+    z-index: -1;
+}
+
+@keyframes moveComet {
+    0% {
+        left: 100%;
+        top: 50%;
+    }
+    100% {
+        left: -10%;
+        top: 20%;
+    }
+}
+
+@keyframes fadeTail {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
