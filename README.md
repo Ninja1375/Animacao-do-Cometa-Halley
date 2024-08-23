@@ -11,4 +11,4 @@ Este projeto usa as três linguagens: HTML, CSS e JavaScript.
 
 **Demonstração:**
 
-![img-demo](https://github.com/user-attachments/assets/34ce1e1d-daf9-40ab-adb3-4583ae4c0577)
+![Animação do Cometa Halley](https://github.com/user-attachments/assets/2c1cc9d2-db39-4079-aba7-8b26679753e3)
